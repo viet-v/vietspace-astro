@@ -1,0 +1,770 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+::selection {
+  color: #143d59;
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  margin: 0;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+header, main, footer {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+
+/* -------------------- Header mobile -------------------- */
+
+header .wrapper {
+  justify-content: flex-end;
+  position: fixed;
+  z-index: 4;
+  color: #143d59;
+}
+
+/* ------------v Navigation for mobile & tablet v------------ */
+.nav-pc {
+  display: none;
+}
+
+#sticky-bar-mobile {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  z-index: 5;
+}
+
+#sticky-bar-mobile img {
+  width: 20px;
+  height: 20px;
+}
+
+#sticky-bar-mobile span {
+  font-family: 'Archivo', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: #143d59;
+}
+
+.nav-background {      /* sticky bar background on scroll */
+  background: linear-gradient(to bottom, #ceeaf7, transparent);
+}
+
+.brand-mobile {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: #ceeaf7;
+  z-index: 5;
+  transform: translateX(100%);  /* mobile navigation at first slide out */
+}
+
+.nav-mobile nav ul {
+  padding: 0;
+  margin: 50px 0;
+}
+
+.nav-mobile nav ul li {
+  list-style-type: none;
+  margin: 80px 0 50px 20px;
+}
+
+.nav-mobile nav ul li:hover {
+  background-color: #fcc729;
+}
+
+.nav-mobile nav ul li a {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  color: #143d59;
+}
+
+#nav-bars, #nav-close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 1.5em;
+  color: #143d59;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.nav-overlay {           /* black overlay on main site when view nav */
+  position: fixed;
+  top: 0; bottom: 0;
+  right: 0; left: 0;
+  background-color: rgb(0, 0, 0, 0.3);
+  display: none;
+  z-index: 4;
+}
+
+
+.show {
+  transform: translateX(0);         /* get back to original position */
+  transition: transform linear 0.2s;
+}
+
+.hide {
+  transform: translateX(100%);      /* slide out of screen */
+  transition: transform linear 0.2s;
+}
+
+.fade-in {
+  display: block;
+  animation: fadeIn linear 0.2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------^ Navigation for mobile & tablet ^------------ */
+
+.hero {
+  width: 100%;
+  height: 240px;
+  font-family: 'Mali', cursive;
+  color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;   
+}
+
+.hero #lake, .hero #mountain {
+  width: 100%;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+#lake {
+  z-index: 2;
+}
+
+#mountain {
+  z-index: 0;
+}
+
+.hero h1 {
+  font-size: 1.5em;
+  font-weight: 500;
+  position: absolute;
+  top: 5%; 
+  left: 130px;
+  margin: 0;
+  z-index: 1;
+}
+
+.hero p {
+  font-size: 1em;
+  font-style: italic;
+  position: absolute;
+  bottom: 25%;
+  right: 30px;
+  margin: 0;
+  z-index: 3;
+}
+
+
+/* -------------------- Projects mobile -------------------- */
+
+.projects, .project-board, .skills, .about, .contact {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.projects {
+  width: 100%;
+  background-color: #143d59;
+  padding-bottom: 50px;
+}
+
+.projects h2, .about h2 {
+  font-family: 'Archivo', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: #ceeaf7;
+  margin: 20px 0;
+}
+
+.project-board {
+  background-color: #ceeaf7;
+  border: 1px solid #143d59;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px black;
+  margin: 40px 0;
+  width: 260px;
+  height: 400px;
+  transition: 0.5s;
+}
+
+.project-board:hover {
+  transform: translateY(-20px);
+}
+
+.content {
+  width: 85%;
+  height: 320px;
+  font-size: 0.875em;
+  color: #143d59;
+}
+
+.project-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  text-align: center;
+}
+
+.project-description {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.project-button {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  margin: 14px 0;
+}
+
+.project-button a {
+  text-align: center;
+  line-height: 30px;
+  background-color: #143d59;
+  width: 66px;
+  height: 30px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 0 0 #fcc729;
+  transition: ease-out 0.3s;
+}
+
+.project-button a:hover {
+  box-shadow: inset 66px 0 0 0 #fcc729,
+              0 0px 10px 5px #fcc729;
+  cursor: pointer;
+  color: #143d59;
+  background-color: #fcc729;
+}
+
+.project-button a:active {
+  transform: scale(0.6);
+}
+
+.project-button a {
+  color: #ceeaf7;
+  font-size: 0.875em;
+  text-decoration: none;
+}
+
+.project1-img {
+  height: 140px;
+  background: url('/assets/SMP.jpg') bottom;
+  background-size: cover;
+  border: 1px solid #143d59;
+}
+
+.project2-img {
+  height: 140px;
+  background: url('/assets/giupbankhoehon.jpg') center;
+  background-size: cover;
+  border: 1px solid #143d59;
+}
+
+.project3-img {
+  height: 140px;
+  background: url('/assets/sticky-notes.jpg');
+  background-size: cover;
+  border: 1px solid #143d59;
+}
+
+.project4-img {
+  height: 140px;
+  background: url('/assets/github-repo-gallery.jpg') center;
+  background-size: cover;
+  border: 1px solid #143d59;
+}
+
+.project5-img {
+  height: 140px;
+  background: url('/assets/guess-the-word.jpg') center;
+  background-size: cover;
+  border: 1px solid #143d59;
+}
+
+.project6-img {
+  height: 140px;
+  background: url('/assets/unplugged.jpg') center;
+  background-size: cover;
+  border: 1px solid #143d59;
+}
+
+
+.project1-img:hover, .project2-img:hover, .project3-img:hover, .project4-img:hover, .project5-img:hover, .project6-img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+/* -------------------- Skills mobile -------------------- */
+
+.skills {
+  width: 100%;
+  background-color: #ceeaf7;
+}
+
+.skills h2, .contact h2 {
+  font-family: 'Archivo', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: #143d59;
+}
+
+.skill-name {
+  font-size: 0.875em;
+  color: #143d59;
+}
+
+.skill-items {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.skill-element {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  margin-bottom: 50px;
+}
+
+.skill-element i {
+  font-size: 3em;
+  color: #143d59
+}
+
+#adobe, #responsive {
+  width: 48px;
+  height: 48px;
+}
+
+#adobe:hover, #responsive:hover, .skill-element i:hover {
+  transform: scale(1.5);
+  transition: transform 0.2s;
+}
+
+/* -------------------- About mobile -------------------- */
+
+.about {
+  width: 100%;
+  background-color: #143d59;
+}
+
+
+.about-photos {
+  float: left;
+  margin-bottom: 2em;
+}
+
+.about-photos img {
+  max-width: 100%;
+}
+
+
+.about-text p {
+  font-size: 0.875em;
+  line-height: 1.625em;
+  color: #ceeaf7;
+  margin: 50px 0 50px 0;
+}
+
+.about h2, .skills h2, .contact h2 {
+  margin: 50px 0;
+}
+
+/* -------------------- Contact mobile -------------------- */
+
+#mail {
+  color: #143d59;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.socials {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 40px 0;
+}
+
+#linkedin, #github, #behance {
+  font-size: 3em;
+  color: #143d59;
+}
+
+#linkedin:hover, #github:hover, #behance:hover {
+  animation: shake 1s ease-in infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: scale(1.5) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.5) rotate(3deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(0deg);
+  }
+  75% {
+    transform: scale(1.5) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1.5) rotate(0deg);
+  }
+}
+
+#linkedin i:active, #github i:active, #behance i:active {
+  transform: scale(0.8);
+  transition: transform 0.2s;
+}
+
+address {
+  margin: 0 0 50px 0;
+}
+
+#copyright {
+  font-size: 0.875em;
+  color: #143d59;
+}
+
+.contact {
+  width: 100%;
+  background: linear-gradient(45deg,  #F99FF9, #9FF9F1, #B2FC77, #FCF477);
+  background-size: 400%;
+  animation: animate 3s ease infinite;
+}
+
+@keyframes animate {
+  0% {background-position: 0 50%}
+  50% {background-position: 100% 50%}
+  100% {background-position: 0% 50%}
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Media Queries for Responsive Design.
+   ========================================================================== */
+
+
+@media only screen and (min-width: 768px) { /* ========== Tablet style here ========== */
+  .wrapper {
+    width: 85%;
+    max-width: 650px;
+  }
+
+/* -------------------- Header tablet -------------------- */
+  .hero {
+    height: 510px;
+  }
+  
+  .hero h1 {
+    font-size: 3.125em;
+    left: 280px;
+  }
+  
+  .hero p {
+    font-size: 2em;
+    right: 50px;
+  }
+
+  #nav-bars, #nav-close {
+    font-size: 2em;
+  }
+
+  .nav-mobile nav ul li a {
+    font-size: 1.125em;
+  }
+
+/* -------------------- Projects tablet -------------------- */
+
+  .project-board {
+    width: 280px;
+    height: 420px;
+  }
+
+  .projects .wrapper {
+    justify-content: space-between;
+  }
+
+  .projects h2, .skills h2, .about h2, contact h2  {
+    font-size: 1.5em;
+  }
+
+  .content, .project-button a {
+    font-size: 1em;
+  }
+
+  .content {
+    height: 350px;
+  }
+
+/* -------------------- Skills tablet -------------------- */
+
+  .skill-name {
+    font-size: 1em;
+  }
+
+/* -------------------- About tablet -------------------- */
+
+  .about-photos {
+    width: 50%;
+    margin-right: 2em;
+  }
+
+  .about-text p {
+    font-size: 1em;
+    margin: 0 0 50px 0;
+  }
+
+/* -------------------- Contact tablet -------------------- */
+
+  address {
+    width: 100%;
+    max-width: 250px;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+  }
+
+  #copyright {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-width: 1200px) { /* ========== Desktop style here ========== */
+  .wrapper {
+    max-width: 800px;
+  }
+
+  .projects h2, .skills h2, .about h2, .contact h2 {
+    font-size: 1.875em;
+  }
+
+  /* -------------------- Header desktop -------------------- */
+
+  .hero {
+    height: 800px;
+  }
+
+  .hero h1 {
+    font-size: 5em;
+    left: 550px;
+  }
+
+  .hero p {
+    font-size: 3.125em;
+    right: 200px;
+  }
+
+  /* ------------v Navigation for desktop v------------ */
+  #sticky-bar-mobile {
+    display: none;
+  }
+
+  .nav-pc {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 4;
+    position: fixed;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .fade-in {
+    display: inline-block;
+    animation: fadeIn linear 0.2s;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .brand, .nav-pc nav {
+    width: 40%;
+  }
+
+  .brand img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-pc ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  .nav-pc ul li {
+    list-style-type: none;
+  }
+
+  .nav-pc ul li a {
+    box-shadow: inset 0 0 0 0 #143d59;
+  }
+
+  .nav-pc ul li a:hover {
+    box-shadow: inset 0 0 0 30px #143d59;
+    color: #ceeaf7;
+    transition: ease-out 0.2s;
+  }
+
+  .nav-pc ul li a, .brand span {
+    font-family: 'Archivo', sans-serif;
+    font-size: 1.125em;
+    font-weight: 600;
+    color: #143d59;
+    text-decoration: none;
+  }
+
+  .nav-background {
+    background: linear-gradient(to bottom, #ceeaf7, transparent);
+  }
+  /* ------------^ Navigation for desktop ^------------ */
+
+
+  /* -------------------- Projects desktop -------------------- */
+
+  .project-board {
+    width: 320px;
+  }
+
+  /* -------------------- Skills desktop -------------------- */
+
+  .skill-element {
+    width: 33%;
+  }
+
+  #adobe, #responsive {
+    margin: 16px 0;
+  }
+
+  /* -------------------- About desktop -------------------- */  
+
+  .about-photos {
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-photos img {
+    filter: grayscale(80%);
+    transition: all 0.5s ease;
+  }
+
+  .about-photos:hover img {
+    filter: none;
+  }
+
+}

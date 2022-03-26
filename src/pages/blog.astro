@@ -1,0 +1,94 @@
+---
+// Style Imports
+import '../styles/blogstyle.css';
+import '../styles/main.css';
+// Component Imports
+import MainLayout from '../layouts/MainLayout.astro';
+// You can import components from any supported Framework here!
+import ReactCounter from '../components/ReactCounter.jsx';
+
+---
+
+<MainLayout title="Viet V. - Frontend Developer">
+    <div class="container">
+        <video id="video" muted autoplay loop>
+            <source src="/assets/coding-background.mp4" type="video/mp4" />
+        </video>
+        <div class="title">
+            <h1>my coding blog</h1>
+        </div>
+        <h2 class="introduction">
+            As a person who likes jotting down special events, I came up with the idea of recording the learning to code journey. Better late than never.
+        </h2>
+        <article class="blog-container">
+            <a href="soundwave-music-player/" class="blog">
+                <article class="blog-box">
+                    <div class="blog-img">
+                      <img src="/assets/SMP.jpg" alt="Soundwave Music Player app" id="img2">
+                    </div>
+                    <div class="description">
+                      <div class="description-title">
+                        <b>I built a minimal music player from scratch</b>
+                      </div>    <br>
+                      <div class="description-text">
+                        From the love with music and visualization, I came up with this idea to build a minimal music player with dynamic sound waves.
+                      </div>
+                    </div>
+                </article>        
+            </a>
+            <a href="completing-freeCodeCamp-js-certification/" class="blog">
+                <article class="blog-box">
+                    <div class="blog-img">
+                      <img src="/assets/freeCodeCamp-certification.png" alt="freeCodeCamp certification" id="img1">
+                    </div>
+                    <div class="description">
+                      <div class="description-title">
+                        <b>Completing the freeCodeCamp JavaScript Algorithms and Data Structures Certification</b>
+                      </div>    <br>
+                      <div class="description-text">
+                        During one month with freeCodeCamp I learned a lot more to consolidate my JavaScript foundation.
+                      </div>
+                    </div>
+                </article>        
+            </a>
+        </article>
+        <p class="outtro">And more to come!<br>...</p>
+    </div>
+
+
+    <script>
+        const navBars = document.getElementById("nav-bars");
+        const navClose = document.getElementById("nav-close");
+        const navMobile = document.querySelector(".nav-mobile");
+        const navOverlay = document.querySelector(".nav-overlay");
+        const stickyBarMobile = document.getElementById("sticky-bar-mobile");
+
+        // document.getElementById('video').play();
+        
+        navBars.addEventListener("click", () => {   /* click hamburger menu */
+            navMobile.classList.add("show");
+            navMobile.classList.remove("hide");
+            navOverlay.classList.add("fade-in");
+        });
+  
+        navClose.addEventListener("click", () => {  /* click close mobile navigation */
+            navMobile.classList.add("hide");
+            navMobile.classList.remove("show");
+            navOverlay.classList.remove("fade-in");
+        })
+  
+        navOverlay.addEventListener("click", () => { /* click shadow overlay when open mobile navigation */
+            navMobile.classList.remove("show");
+            navMobile.classList.add("hide");
+            navOverlay.classList.remove("fade-in");
+        })
+  
+        window.addEventListener("scroll", () => {     /* sticky navigation bar on scroll effect */
+            if (window.scrollY > 0) {     
+                stickyBarMobile.classList.add("nav-background");
+            } else {
+                stickyBarMobile.classList.remove("nav-background");
+            }
+        })
+    </script>
+</MainLayout>
